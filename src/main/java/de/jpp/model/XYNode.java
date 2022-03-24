@@ -1,18 +1,20 @@
 package de.jpp.model;
 
-import java.util.Objects;
-
 public class XYNode {
     private String label;
     private double x;
     private double y;
+
+    public XYNode() {
+    }
     /**
      * Creates a new XYNode with the specified label and coordinate
      *
      * @param label the label
      * @param x     the x value of the coordinate
      * @param y     the y value of the coordinate
-     */
+     **/
+
     public XYNode(String label, double x, double y) throws Exception {
         if(label == null)
             throw new Exception("The label shouldn't be null!");

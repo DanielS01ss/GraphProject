@@ -25,6 +25,9 @@ public class Edge<N, A> {
         this.annotation = annotation;
     }
 
+    public Edge() {
+    }
+
     public Edge(N start, N dest)
     {
         if(start != null && dest != null)

@@ -9,7 +9,7 @@ import org.w3c.dom.Node;
 import java.util.*;
 import java.util.function.Consumer;
 
-public class ObservableGraphimpl<N,A> implements ObservableGraph, WeightedGraph {
+public class ObservableGraphimpl<N extends XYNode,A> implements ObservableGraph, WeightedGraph {
 
     protected GraphImpl graph;
 
@@ -164,25 +164,26 @@ public class ObservableGraphimpl<N,A> implements ObservableGraph, WeightedGraph 
 
     @Override
     public void addNodeAddedListener(Consumer listener) {
-        listener = (val) -> {addNode(val);};
+        XYNode node = new XYNode();
+        listener = (val) -> {graph.addNode(val);};
+        listener.accept(node);
         nodeAddedListner.add(listener);
     }
 
     @Override
     public void addNodeRemovedListener(Consumer listener) {
-        listener = (val) -> {removeNode(val);};
+        listener = (val) -> {graph.removeNode(val);};
+        listener.accept(new XYNode());
         nodeRemovedListner.add(listener);
     }
 
     @Override
     public void removeNodeAddedListener(Consumer listener) {
-        listener = (val) -> {addNode(val);};
         nodeAddedListner.remove(listener);
     }
 
     @Override
     public void removeNodeRemovedListener(Consumer listener) {
-        listener = (val) -> {removeNode(val);};
         nodeRemovedListner.remove(listener);
     }
 
@@ -198,31 +199,43 @@ public class ObservableGraphimpl<N,A> implements ObservableGraph, WeightedGraph 
 
     @Override
     public void addEdgeRemovedListener(Consumer listener) {
+        listener = (val) -> {graph.removeEdge((Edge) val);};
+        listener.accept(new Edge<N,A>());
         edgeRemovedListner.add(listener);
     }
 
     @Override
     public void addEdgeAddedListener(Consumer listener) {
+        listener = (val) -> {graph.addEdge(val, val, Optional.of(val));};
+        listener.accept(new Edge<>());
         edgeAddedListner.add(listener);
     }
 
     @Override
     public void addNeighboursListedListener(Consumer listener) {
+        listener = (val) -> {graph.getNeighbours(val);};
+        listener.accept(new XYNode());
         neighborsListedListner.add(listener);
     }
 
     @Override
     public void addReachableListedListener(Consumer listener) {
+        listener = (val) -> {graph.getReachableFrom(val);};
+        listener.accept(new XYNode());
         reachableListedListner.add(listener);
     }
 
     @Override
     public void addNodesListedListener(Consumer listener) {
+        listener = (val) -> {graph.getNodes();};
+        listener.accept(new XYNode());
         nodesListedListner.add(listener);
     }
 
     @Override
     public void addEdgesListedListener(Consumer listener) {
+        listener = (val) -> {graph.getEdges();};
+        listener.accept(new Edge<>());
         edgesListedListner.add(listener);
     }
 
