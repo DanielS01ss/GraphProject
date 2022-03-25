@@ -3,9 +3,11 @@ package de.jpp.factory;
 
 import de.jpp.io.interfaces.GraphReader;
 import de.jpp.io.interfaces.GraphWriter;
+import de.jpp.io.interfaces.ParseException;
 import de.jpp.model.LabelMapGraph;
 import de.jpp.model.TwoDimGraph;
 import de.jpp.model.XYNode;
+import net.sourceforge.gxl.*;
 
 import java.awt.image.BufferedImage;
 import java.util.Map;
@@ -19,7 +21,15 @@ public class IOFactory {
      * @return a new GraphReader instance which parses a TwoDimGraph from a GXL-String
      */
     public GraphReader<XYNode, Double, TwoDimGraph, String> getTwoDimGxlReader() {
-        throw new UnsupportedOperationException("not supported yet!");
+        GraphReader<XYNode,Double,TwoDimGraph,String> graphReader = new GraphReader<XYNode, Double, TwoDimGraph, String>() {
+            @Override
+            public TwoDimGraph read(String input) throws ParseException {
+
+                TwoDimGraph graph = new TwoDimGraph();
+                return new TwoDimGraph();
+            }
+        };
+        return graphReader;
     }
 
     /**

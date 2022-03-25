@@ -128,17 +128,17 @@ public class ObservableGraphimpl<N extends XYNode,A> implements ObservableGraph,
     }
 
     @Override
-    public Collection<Edge> getNeighbours(Object node) {
+    public Collection<Edge<N,A>> getNeighbours(Object node) {
         return graph.getNeighbours(node);
     }
 
     @Override
-    public Collection<Edge> getReachableFrom(Object node) {
+    public Collection<Edge<N,A>> getReachableFrom(Object node) {
         return graph.getReachableFrom(node);
     }
 
     @Override
-    public Collection<Edge> getEdges() {
+    public Collection<Edge<N,A>> getEdges() {
         return graph.getEdges();
     }
 

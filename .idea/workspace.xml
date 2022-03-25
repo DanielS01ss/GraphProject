@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+<<<<<<< Updated upstream
+    <list default="true" id="7b3dad1e-49e7-4325-8637-6612b170b698" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/TestClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/TestClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/factory/IOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/factory/IOFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/model/ObservableGraphimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/model/ObservableGraphimpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/model/TwoDimGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/model/TwoDimGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/TestClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/TestClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/model/GraphImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/model/GraphImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/model/ObservableGraphimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/model/ObservableGraphimpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/model/TwoDimGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/model/TwoDimGraph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/model/XYNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/model/XYNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/GuiUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/GuiUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+=======
+    <list default="true" id="3ffe91da-1c71-42fd-8d34-42c97245adfa" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/TestClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/TestClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/model/ObservableGraphimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/model/ObservableGraphimpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/model/TwoDimGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/model/TwoDimGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/model/XYNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/model/XYNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/model/interfaces/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/model/interfaces/Edge.java" afterDir="false" />
+>>>>>>> Stashed changes
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+<<<<<<< Updated upstream
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+=======
+>>>>>>> Stashed changes
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+<<<<<<< Updated upstream
+  <component name="ProjectId" id="26szQ0nkJOK2bBUYtGRV2orCAcU" />
+=======
+  <component name="ProjectId" id="26n1KInJjrZ4DzOpdHxLARkgU1W" />
+>>>>>>> Stashed changes
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+<<<<<<< Updated upstream
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="exceleditor.install" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/jdom-2.0.6.1/lib/xalan/serializer-2.7.2.jar" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RunManager">
+    <configuration name="TestClass" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+=======
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+  </component>
+  <component name="RunManager">
+    <configuration name="TestClass" type="Application" factoryName="Application">
+>>>>>>> Stashed changes
+      <option name="MAIN_CLASS_NAME" value="de.jpp.TestClass" />
+      <module name="graphen" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+<<<<<<< Updated upstream
+      <changelist id="7b3dad1e-49e7-4325-8637-6612b170b698" name="Changes" comment="" />
+      <created>1648227068103</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1648227068103</updated>
+=======
+      <changelist id="3ffe91da-1c71-42fd-8d34-42c97245adfa" name="Changes" comment="" />
+      <created>1648044474988</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1648044474988</updated>
+>>>>>>> Stashed changes
+    </task>
+    <servers />
+  </component>
+</project>
