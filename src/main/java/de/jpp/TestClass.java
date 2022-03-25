@@ -1,22 +1,21 @@
 package de.jpp;
 
 
-import de.jpp.factory.GraphFactory;
-import de.jpp.model.interfaces.Graph;
+import de.jpp.model.TwoDimGraph;
+import de.jpp.model.TwoDimGraphDotIO;
 
-import java.util.Optional;
+import java.util.HashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class TestClass {
     public static void main(String[] args)
     {
-        Graph<String,Double> graph = GraphFactory.createNewGraph();
+        TwoDimGraphDotIO graphDotIO = new TwoDimGraphDotIO();
 
-        graph.addNode("Start");
-        graph.addNode("End");
-
-        Double weight = 10.0;
-        graph.addEdge("Start", "End", Optional.of(weight));
-
-        System.out.println(graph);
+        Pattern p = Pattern.compile("(XYNode)?,[a-zA-Z]*");
+        Matcher m = p.matcher("XYNode,node");
+        boolean b = m.matches();
+        System.out.println(b);
     }
 }
