@@ -5,34 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aba2849c-322c-4eb3-99b9-7d642b20274e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jdom_2_x_2022_03_26_13_09.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jdom-2.0.6/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jdom-2.0.6/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jdom-2.0.6/jdom-2.0.6-contrib.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jdom-2.0.6/jdom-2.0.6-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jdom-2.0.6/jdom-2.0.6-junit.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jdom-2.0.6/jdom-2.0.6-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jdom-2.0.6/jdom-2.0.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jdom-2.0.6/lib/jaxen-1.1.6.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jdom-2.0.6/lib/jaxen-1.1.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jdom-2.0.6/lib/xalan/serializer-2.7.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jdom-2.0.6/lib/xalan/xalan-2.7.2.LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jdom-2.0.6/lib/xalan/xalan-2.7.2.NOTICE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jdom-2.0.6/lib/xalan/xalan-2.7.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jdom-2.0.6/lib/xerces.2.11.LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jdom-2.0.6/lib/xerces.2.11.NOTICE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jdom-2.0.6/lib/xercesImpl.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jdom-2.0.6/lib/xml-apis.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/TestClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/TestClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/model/TwoDimGraphDotIO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/model/TwoDimGraphDotIO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/model/XYNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/model/XYNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jdom-2.0.6/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jdom-2.0.6/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jdom-2.0.6/jdom-2.0.6-contrib.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jdom-2.0.6/jdom-2.0.6-javadoc.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jdom-2.0.6/jdom-2.0.6-junit.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jdom-2.0.6/jdom-2.0.6-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jdom-2.0.6/jdom-2.0.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jdom-2.0.6/lib/jaxen-1.1.6.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jdom-2.0.6/lib/jaxen-1.1.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jdom-2.0.6/lib/xalan/serializer-2.7.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jdom-2.0.6/lib/xalan/xalan-2.7.2.LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jdom-2.0.6/lib/xalan/xalan-2.7.2.NOTICE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jdom-2.0.6/lib/xalan/xalan-2.7.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jdom-2.0.6/lib/xerces.2.11.LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jdom-2.0.6/lib/xerces.2.11.NOTICE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jdom-2.0.6/lib/xercesImpl.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jdom-2.0.6/lib/xml-apis.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/TestClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/TestClass.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -41,20 +49,26 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="26ZIa9SPDFc86mlkt5GMmKPNNip" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="exceleditor.install" value="true" />
-    <property name="last_opened_file_path" value="$MAVEN_REPOSITORY$/org/jdom/jdom2/2.0.6/jdom-2.0.6-sources.jar" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../jdom/build/package/jdom-2.x-2022.03.26.13.09.jar" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.22068965" />
+    <property name="project.structure.side.proportion" value="0.42988506" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -76,10 +90,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="jdom-2.0.6.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/src/main/java/jdom-2.0.6/jdom-2.0.6.jar" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Application.TestClass" />
       <item itemvalue="Application.HelloApplication" />
+      <item itemvalue="JAR Application.jdom-2.0.6.jar" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JAR Application.jdom-2.0.6.jar" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

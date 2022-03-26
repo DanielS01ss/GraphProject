@@ -7,6 +7,15 @@ public class XYNode {
 
     public XYNode() {
     }
+    public XYNode(XYNode node) {
+        this.label = node.label;
+        this.x = node.x;
+        this.y = node.y;
+    }
+    public XYNode(String label, double x) {
+        this.label = label;
+        this.x = x;
+    }
     /**
      * Creates a new XYNode with the specified label and coordinate
      *

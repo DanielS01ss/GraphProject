@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="jdom-2.x-2022.03.26.13.09">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../jdom/build/package/jdom-2.x-2022.03.26.13.09.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="jar://$PROJECT_DIR$/../../jdom/build/package/jdom-2.x-2022.03.26.13.09.jar!/" recursive="false" />
+  </library>
+</component>
