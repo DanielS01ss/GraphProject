@@ -12,7 +12,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="graphen" options="--add-exports java.security.jgss/org=com.example.graphen" />
+      <module name="graphen" options="" />
     </option>
   </component>
 </project>
