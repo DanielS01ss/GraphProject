@@ -3,12 +3,9 @@ package de.jpp.model;
 import de.jpp.io.interfaces.GraphReader;
 import de.jpp.io.interfaces.GraphWriter;
 import de.jpp.io.interfaces.ParseException;
-import de.jpp.model.interfaces.Edge;
 import de.jpp.model.interfaces.Graph;
 
-import javax.xml.stream.XMLStreamReader;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -22,6 +19,11 @@ public class TwoDimGraphDotIO  implements GraphWriter, GraphReader {
     @Override
     public Object write(Graph graph) {
         return null;
+    }
+
+    public TwoDimGraph read(String input)
+    {
+        return new TwoDimGraph();
     }
 
     public void parseNode(TwoDimGraph graph, HashMap<Integer, XYNode> map, String line) throws ParseException
