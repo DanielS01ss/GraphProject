@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="aba2849c-322c-4eb3-99b9-7d642b20274e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/TestClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/TestClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/factory/IOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/factory/IOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/model/TwoDimGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/model/TwoDimGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/model/XYNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/model/XYNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/factory/MazeFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/factory/MazeFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/factory/SearchFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/factory/SearchFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
