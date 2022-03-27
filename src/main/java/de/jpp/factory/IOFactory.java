@@ -8,12 +8,9 @@ import de.jpp.model.LabelMapGraph;
 import de.jpp.model.TwoDimGraph;
 import de.jpp.model.XYNode;
 import de.jpp.model.interfaces.Edge;
-import net.sourceforge.gxl.*;
 
-import javax.swing.text.html.Option;
-import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.nio.file.Path;
+import java.awt.image.DataBufferByte;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -134,7 +131,124 @@ public class IOFactory {
      * @return a new GraphReader instance which parses a TwoDimGraph from a BufferedImage-Maze
      */
     public GraphReader<XYNode, Double, TwoDimGraph, BufferedImage> getTwoDimImgReader() {
-        throw new UnsupportedOperationException("not supported yet!");
+       GraphReader<XYNode,Double,TwoDimGraph,BufferedImage> graph = new GraphReader<XYNode, Double, TwoDimGraph, BufferedImage>() {
+           @Override
+           public TwoDimGraph read(BufferedImage input) throws ParseException {
+               TwoDimGraph twoDimGraph = new TwoDimGraph();
+               ArrayList<XYNode> nodeList = new ArrayList<>();
+               ArrayList<Edge<XYNode,Double>> edgeList = new ArrayList<>();
+               int[][] result = convertTo2D(input);
+               int width = input.getWidth();
+               int height = input.getHeight();
+               int counter = 1;
+               String label = "";
+               XYNode currentNode = new XYNode();
+               for (int col = 1; col < width-1; col++)
+               {
+                   while (counter < height-1)
+                   {
+                       if(counter == height-2 && col > 1)
+                       {
+                           if(result[counter][col-1] == -1)
+                           {
+                               label = "(" + col + "|" + counter + ")";
+                               nodeList.add(new XYNode(label,col,counter+1));
+                               label = "(" + (col-1) + "|" + counter + ")";
+                               try {
+                                   twoDimGraph.addEdge(currentNode, new XYNode(label, col - 1, counter), Optional.of(1.0));
+                                   twoDimGraph.addEdge(new XYNode(label, col - 1, counter), currentNode, Optional.of(1.0));
+                               }
+                               catch (Exception e)
+                               {
+                                   e.printStackTrace();
+                               }
+                           }
+                           break;
+                       }
+                       if(result[counter][col] == -1)
+                       {
+                           label = "(" + col + "|" + counter + ")";
+                           currentNode = new XYNode(label,col,counter);
+                           nodeList.add(currentNode);
+                           if(result[counter+1][col] == -1)
+                           {
+                               label = "(" + col + "|" + counter+1 + ")";
+                               try {
+                                   twoDimGraph.addEdge(currentNode, new XYNode(label, col, counter+1), Optional.of(1.0));
+                                   twoDimGraph.addEdge(new XYNode(label, col, counter+1), currentNode, Optional.of(1.0));
+                               } catch (Exception e) {
+                                   e.printStackTrace();
+                               }
+                           }
+                       }
+                       if(col > 1)
+                       {
+                           if(result[counter][col-1] == -1)
+                           {
+                               label = "(" + (col-1) + "|" + counter + ")";
+                               try {
+                                   twoDimGraph.addEdge(currentNode, new XYNode(label, col - 1, counter), Optional.of(1.0));
+                                   twoDimGraph.addEdge(new XYNode(label, col - 1, counter), currentNode, Optional.of(1.0));
+                               }
+                               catch (Exception e)
+                               {
+                                   e.printStackTrace();
+                               }
+                           }
+                       }
+                       counter++;
+                   }
+               }
+               twoDimGraph.addNodes(nodeList);
+               if(twoDimGraph == null)
+                   throw new ParseException();
+               return twoDimGraph;
+           }
+       };
+       return graph;
+    }
+
+    public static int[][] convertTo2D(BufferedImage image)
+    {
+        final byte[] pixels = ((DataBufferByte) image.getRaster().getDataBuffer()).getData();
+        final int width = image.getWidth();
+        final int height = image.getHeight();
+        final boolean hasAlphaChannel = image.getAlphaRaster() != null;
+
+        int[][] result = new int[height][width];
+        if (hasAlphaChannel) {
+            final int pixelLength = 4;
+            for (int pixel = 0, row = 0, col = 0; pixel + 3 < pixels.length; pixel += pixelLength) {
+                int argb = 0;
+                argb += (((int) pixels[pixel] & 0xff) << 24); // alpha
+                argb += ((int) pixels[pixel + 1] & 0xff); // blue
+                argb += (((int) pixels[pixel + 2] & 0xff) << 8); // green
+                argb += (((int) pixels[pixel + 3] & 0xff) << 16); // red
+                result[row][col] = argb;
+                col++;
+                if (col == width) {
+                    col = 0;
+                    row++;
+                }
+            }
+        } else {
+            final int pixelLength = 3;
+            for (int pixel = 0, row = 0, col = 0; pixel + 2 < pixels.length; pixel += pixelLength) {
+                int argb = 0;
+                argb += -16777216; // 255 alpha
+                argb += ((int) pixels[pixel] & 0xff); // blue
+                argb += (((int) pixels[pixel + 1] & 0xff) << 8); // green
+                argb += (((int) pixels[pixel + 2] & 0xff) << 16); // red
+                result[row][col] = argb;
+                col++;
+                if (col == width) {
+                    col = 0;
+                    row++;
+                }
+            }
+        }
+
+        return result;
     }
 
     /**

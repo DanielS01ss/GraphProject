@@ -5,6 +5,7 @@ import de.jpp.model.interfaces.ObservableGraph;
 import de.jpp.model.interfaces.WeightedGraph;
 
 import java.util.Collection;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Consumer;
 
@@ -38,6 +39,18 @@ public class TwoDimGraph implements WeightedGraph<XYNode,Double>, ObservableGrap
         return new Edge<>(start,dest,Optional.of(weight));
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TwoDimGraph graph1 = (TwoDimGraph) o;
+        return graph.equals(graph1.graph);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(graph);
+    }
 
     @Override
     public boolean addNode(XYNode node) {
@@ -61,7 +74,8 @@ public class TwoDimGraph implements WeightedGraph<XYNode,Double>, ObservableGrap
 
     @Override
     public Edge<XYNode, Double> addEdge(XYNode start, XYNode destination, Optional<Double> annotation) {
-        return graph.addEdge(start,destination,annotation);
+        graph.addEdge(start,destination,annotation);
+        return new Edge<>(start,destination,annotation);
     }
 
     @Override

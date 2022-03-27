@@ -1,5 +1,9 @@
 package de.jpp.model;
 
+import de.jpp.io.interfaces.ParseException;
+
+import java.util.Objects;
+
 public class XYNode {
     private String label;
     private double x;
@@ -24,9 +28,9 @@ public class XYNode {
      * @param y     the y value of the coordinate
      **/
 
-    public XYNode(String label, double x, double y) throws Exception {
+    public XYNode(String label, double x, double y) throws ParseException {
         if(label == null)
-            throw new Exception("The label shouldn't be null!");
+            throw new ParseException();
         else
             this.label = label;
         this.x = x;
@@ -66,5 +70,19 @@ public class XYNode {
     public double euclidianDistTo(XYNode other) {
         return Math.sqrt((other.x - this.x)*(other.x - this.x) + (other.y - this.y)*(other.y - this.y));
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        XYNode xyNode = (XYNode) o;
+        return Double.compare(xyNode.x, x) == 0 && Double.compare(xyNode.y, y) == 0 && label.equals(xyNode.label);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(label, x, y);
+    }
+
 
 }
