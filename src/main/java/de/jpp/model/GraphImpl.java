@@ -4,6 +4,7 @@ import de.jpp.model.interfaces.Edge;
 import de.jpp.model.interfaces.Graph;
 import org.w3c.dom.Node;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class GraphImpl<N, A> implements Graph {
@@ -136,6 +137,7 @@ public class GraphImpl<N, A> implements Graph {
         {
             list.addAll(s.getValue());
         }
+
         return list;
     }
 

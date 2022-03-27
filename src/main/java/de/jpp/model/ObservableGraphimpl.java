@@ -47,6 +47,7 @@ public class ObservableGraphimpl<N extends XYNode,A> implements ObservableGraph,
         this.nodesListedListner = nodesListedListner;
     }
 
+    public GraphImpl getGraphImpl(){ return graph;}
     public Graph getGraph() {
         return graph;
     }

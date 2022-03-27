@@ -1,6 +1,7 @@
 package de.jpp.model;
 
 import de.jpp.model.interfaces.Edge;
+import de.jpp.model.interfaces.Graph;
 import de.jpp.model.interfaces.ObservableGraph;
 import de.jpp.model.interfaces.WeightedGraph;
 
@@ -188,5 +189,6 @@ public class TwoDimGraph implements WeightedGraph<XYNode,Double>, ObservableGrap
     public double getDistance(Edge<XYNode, Double> edge) {
         return graph.getDistance(edge);
     }
+
 }
 
