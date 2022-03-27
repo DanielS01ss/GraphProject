@@ -1,7 +1,7 @@
 package de.jpp;
 
 public class TestClass {
-    public static void main(String[] args) {
-
+    public static void main(String[] args)
+    {
     }
 }
