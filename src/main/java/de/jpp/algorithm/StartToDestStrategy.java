@@ -5,9 +5,20 @@ import de.jpp.algorithm.interfaces.SearchStopStrategy;
 
 public class StartToDestStrategy<N> implements SearchStopStrategy<N> {
 
+    private N dest;
+
+    public StartToDestStrategy() {
+    }
+
+    public StartToDestStrategy(N dest) {
+        this.dest = dest;
+    }
+
     @Override
     public boolean stopSearch(N lastClosedNode) {
-        throw new UnsupportedOperationException("not supported yet!");
+        if(dest.equals(lastClosedNode))
+            return true;
+        return false;
     }
 
     /**
@@ -16,7 +27,7 @@ public class StartToDestStrategy<N> implements SearchStopStrategy<N> {
      * @Returns the destination node of this search
      */
     public N getDest() {
-        throw new UnsupportedOperationException("not supported yet!");
+        return dest;
     }
 
 }

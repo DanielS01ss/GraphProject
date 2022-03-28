@@ -145,7 +145,6 @@ public class IOFactory {
                int width = input.getWidth();
                int height = input.getHeight();
                int counter = 1;
-               int counter2 = 0;
                String label = "";
                XYNode currentNode = new XYNode();
                for (int col = 1; col < width-1; col++)
@@ -156,8 +155,8 @@ public class IOFactory {
                        {
                            if(result[counter][col-1] == -1)
                            {
-                               label = Integer.toString(++counter2);
-                               nodeList.add(new XYNode(label,col,counter+1));
+                               label = "(" + (col) + "|" + counter + ")";
+                               nodeList.add(new XYNode(label,col,counter));
                                label = "(" + (col-1) + "|" + counter + ")";
                                try {
                                    twoDimGraph.addEdge(currentNode, new XYNode(label, col - 1, counter), Optional.of(1.0));
@@ -172,12 +171,12 @@ public class IOFactory {
                        }
                        if(result[counter][col] == -1)
                        {
-                           label = Integer.toString(++counter2);
+                           label = "(" + col + "|" + counter + ")";
                            currentNode = new XYNode(label,col,counter);
                            nodeList.add(currentNode);
                            if(result[counter+1][col] == -1)
                            {
-                               label = Integer.toString(++counter2);
+                               label = "(" + col + "|" + (counter+1) + ")";
                                try {
                                    twoDimGraph.addEdge(currentNode, new XYNode(label, col, counter+1), Optional.of(1.0));
                                    twoDimGraph.addEdge(new XYNode(label, col, counter+1), currentNode, Optional.of(1.0));

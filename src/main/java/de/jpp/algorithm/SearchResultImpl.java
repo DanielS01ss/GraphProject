@@ -119,6 +119,19 @@ public class SearchResultImpl<N> implements ObservableSearchResult {
         return Optional.empty();
     }
 
+    public Collection getAllClosedNodes()
+    {
+        ArrayList<N> list = new ArrayList<>();
+        for (Map.Entry<N,NodeStatus> m : statusMap.entrySet())
+        {
+            if(m.getValue() == NodeStatus.CLOSED)
+            {
+                list.add(m.getKey());
+            }
+        }
+        return list;
+    }
+
     @Override
     public Collection getAllKnownNodes() {
         ArrayList<N> list = new ArrayList<>();
