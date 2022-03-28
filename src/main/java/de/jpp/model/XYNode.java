@@ -81,7 +81,7 @@ public class XYNode {
 
     @Override
     public int hashCode() {
-        return Objects.hash(label, x, y);
+        return Objects.hash(x, y);
     }
 
 
