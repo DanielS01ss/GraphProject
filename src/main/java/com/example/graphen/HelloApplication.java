@@ -5,11 +5,13 @@ import de.jpp.io.interfaces.GraphReader;
 import de.jpp.io.interfaces.GraphWriter;
 import de.jpp.io.interfaces.ParseException;
 import de.jpp.model.TwoDimGraph;
+import de.jpp.model.TwoDimGraphGXLWriter;
 import de.jpp.model.XYNode;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.jdom2.Element;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -26,32 +28,6 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
-//        launch();
-        IOFactory io = new IOFactory();
-        GraphReader<XYNode, Double, TwoDimGraph, String> gl = io.getTwoDimGxlReader();
-        TwoDimGraph tg = null;
-        try{
-             tg = gl.read("1");
-        } catch(ParseException e)
-        {
-            System.out.println(e);
-        }
-
-        if(tg!=null)
-        {
-            Collection<XYNode> nodes = tg.getNodes();
-            for(XYNode n:nodes)
-            {
-//                System.out.println("X = "+n.getX());
-//                System.out.println("Y = "+n.getY());
-//                System.out.println("Label = "+n.getLabel());
-            }
-        } else {
-            System.out.println("a");
-        }
-
-        GraphWriter<XYNode, Double, TwoDimGraph, String> gw = io.getTwoDimGxlWriter();
-        String res = gw.write(tg);
-
+        launch();
     }
 }

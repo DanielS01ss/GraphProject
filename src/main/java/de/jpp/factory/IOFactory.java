@@ -1,6 +1,7 @@
 package de.jpp.factory;
 
 
+import com.example.graphen.ApplicationResources;
 import de.jpp.io.interfaces.GraphReader;
 import de.jpp.io.interfaces.GraphWriter;
 import de.jpp.io.interfaces.ParseException;
@@ -13,6 +14,13 @@ import de.jpp.model.interfaces.Edge;
 import java.io.IOException;
 import java.io.OutputStream;
 import net.sourceforge.gxl.*;
+import org.jdom2.Document;
+import org.jdom2.Element;
+import org.jdom2.JDOMException;
+import org.jdom2.input.SAXBuilder;
+import org.jdom2.output.Format;
+import org.jdom2.output.XMLOutputter;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
@@ -88,7 +96,7 @@ public class IOFactory {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
+                ApplicationResources.appGraph = gr;
                 return gr;
             }
         };
