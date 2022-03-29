@@ -261,7 +261,13 @@ public class IOFactory {
      * @return a new GraphReader instance which parses a LabelMapGraph from a GXL-String
      */
     public GraphReader<String, Map<String, String>, LabelMapGraph, String> getLabelMapGraphGxlReader() {
-        throw new UnsupportedOperationException("not supported yet!");
+        GraphReader<String,Map<String, String>,LabelMapGraph,String> graphReader = new GraphReader<String, Map<String, String>, LabelMapGraph, String>() {
+            @Override
+            public LabelMapGraph read(String input) throws ParseException {
+                return null;
+            }
+        };
+        return null;
     }
 
     /**

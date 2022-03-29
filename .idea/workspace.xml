@@ -6,11 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="aba2849c-322c-4eb3-99b9-7d642b20274e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/algorithm/SearchResultImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/algorithm/SearchResultImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/algorithm/StartToDestStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/algorithm/StartToDestStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/algorithm/DijkstraSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/algorithm/DijkstraSearch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/factory/IOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/factory/IOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/factory/SearchStopFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/factory/SearchStopFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/model/XYNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/model/XYNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/model/GraphImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/model/GraphImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/model/LabelMapGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/model/LabelMapGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/model/TwoDimGraphDotIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/model/TwoDimGraphDotIO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/StartToDestStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/StartToDestStrategy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/factory/IOFactory$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/factory/IOFactory$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/factory/IOFactory$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/factory/IOFactory$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/factory/IOFactory$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/factory/IOFactory$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/factory/IOFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/factory/IOFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/factory/MazeFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/factory/MazeFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/factory/SearchFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/factory/SearchFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/factory/SearchStopFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/factory/SearchStopFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/model/GraphImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/model/GraphImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/model/LabelMapGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/model/LabelMapGraph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/model/XYNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/model/XYNode.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
