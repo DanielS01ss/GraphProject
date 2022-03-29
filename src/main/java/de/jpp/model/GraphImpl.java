@@ -7,7 +7,7 @@ import org.w3c.dom.Node;
 import java.lang.reflect.Array;
 import java.util.*;
 
-public class GraphImpl<N, A> implements Graph {
+public class GraphImpl<N, A> implements Graph<N,A> {
 
     private ArrayList<N> nodes;
     private HashMap<N,ArrayList<Edge>> edges;
@@ -104,14 +104,15 @@ public class GraphImpl<N, A> implements Graph {
 
     @Override
     public Collection<Edge> getNeighbours(Object node) {
+        ArrayList<Edge> list = new ArrayList<>();
         for(Map.Entry<N,ArrayList<Edge>> s : edges.entrySet())
         {
             if(s.getKey().equals(node))
             {
-                return s.getValue();
+                list.addAll(s.getValue());
             }
         }
-        return null;
+        return list;
     }
 
     @Override
@@ -131,14 +132,13 @@ public class GraphImpl<N, A> implements Graph {
     }
 
     @Override
-    public Collection<Edge> getEdges() {
+    public Collection<Edge<N, A>> getEdges() {
         ArrayList<Edge> list = new ArrayList<>();
         for(Map.Entry<N,ArrayList<Edge>> s : edges.entrySet())
         {
             list.addAll(s.getValue());
         }
-
-        return list;
+        return (Collection) list;
     }
 
     @Override
