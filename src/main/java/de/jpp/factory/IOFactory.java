@@ -11,8 +11,8 @@ import de.jpp.model.TwoDimGraph;
 import de.jpp.model.XYNode;
 import de.jpp.model.interfaces.Edge;
 
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
+
 import net.sourceforge.gxl.*;
 import org.jdom2.Document;
 import org.jdom2.Element;
@@ -21,8 +21,8 @@ import org.jdom2.input.SAXBuilder;
 import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
 
-import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
@@ -336,15 +336,11 @@ public class IOFactory {
      *
      * @return a new GraphReader instance which parses a LabelMapGraph from a GXL-String
      */
-    public GraphReader<String, Map<String, String>, LabelMapGraph, String> getLabelMapGraphGxlReader() {
-        GraphReader<String,Map<String, String>,LabelMapGraph,String> graphReader = new GraphReader<String, Map<String, String>, LabelMapGraph, String>() {
-            @Override
-            public LabelMapGraph read(String input) throws ParseException {
-                return null;
-            }
-        };
-        return null;
-    }
+
+//    public GraphReader<String, Map<String, String>, LabelMapGraph, String> getLabelMapGraphGxlReader() {
+//        throw new UnsupportedOperationException("not supported yet!");
+//    }
+
 
     /**
      * Returns a new GraphWriter instances which outputs a TwoDimGraph as a GXL-String
@@ -477,8 +473,65 @@ public class IOFactory {
      * @return a new GraphWriter instance which outputs a LabelMapGraph as GXL-String
      */
     public GraphWriter<String, Map<String, String>, LabelMapGraph, String> getLabelMapGraphGxlWriter() {
-        throw new UnsupportedOperationException("not supported yet!");
+
+        GraphWriter<String,Map<String,String>,LabelMapGraph,String> gWrite = new GraphWriter<String, Map<String, String>, LabelMapGraph, String>() {
+            @Override
+            public String write(LabelMapGraph graph) {
+               String result="";
+               Collection<String> nodes = graph.getNodes();
+               Collection<Edge<String,Map<String,String>>> edges = graph.getEdges();
+
+               return result;
+            }
+        };
+
+        return gWrite;
     }
 
+    public GraphReader<String, Map<String, String>, LabelMapGraph,String> getLabelMapGraphGxlReader()
+    {
+        GraphReader<String, Map<String, String>, LabelMapGraph,String> grReader = new GraphReader<String, Map<String, String>, LabelMapGraph, String>() {
+            @Override
+            public LabelMapGraph read(String input) throws ParseException {
+                ///public GraphImpl(ArrayList<N> nodes, HashMap<N, ArrayList<Edge>> edges)
+                ///ArrayList<String> Nodes
+                ///HashMap <String,ArrayList<Edge>>
+                ///Deci la node <String>
+                ///la edges HashMap<String,ArrayList<Edge>> edges;
+                LabelMapGraph lGraph = new LabelMapGraph();
+                InputStream stream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
+                SAXBuilder sax = new SAXBuilder();
+                Document doc;
+                try{
+                    doc = sax.build(stream);
+                    Element rootNode = doc.getRootElement();
+                    List<Element> target = rootNode.getChildren("node");
+                    for(Element el:target)
+                    {
+                        String nodeData = el.getAttributeValue("id");
+                        lGraph.addNode(nodeData);
+                    }
 
+                    target = rootNode.getChildren("edge");
+
+                    for(Element el:target)
+                    {
+                        ///start dest annotation
+                        String start = el.getAttributeValue("from");
+                        String end = el.getAttributeValue("to");
+                        Edge eg = new Edge(start,end);
+                        lGraph.addEdge(start,end);
+                    }
+
+                } catch (JDOMException | IOException ex)
+                {
+                    System.out.println(ex);
+                }
+
+                return lGraph;
+            }
+        };
+
+        return grReader;
+    }
 }

@@ -40,7 +40,7 @@ public class GraphFactory {
     }
 
     public LabelMapGraph createNewLabelMapGraph() {
-        throw new UnsupportedOperationException("not supported yet");
+        return new LabelMapGraph();
     }
 
 }
