@@ -14,6 +14,7 @@ import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.jdom2.*;
 
 public class IOFactory {
 

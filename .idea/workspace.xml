@@ -5,73 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aba2849c-322c-4eb3-99b9-7d642b20274e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_17_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_17_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_17_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_17_0_2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/factory/IOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/factory/IOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/graphen/ApplicationResources.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/graphen/ApplicationResources.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/graphen/HelloApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/graphen/HelloApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/graphen/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/graphen/HelloController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/GXLReaderTemplate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/GXLReaderTemplate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/TestClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/TestClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/BreadthFirstSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/BreadthFirstSearch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/DijkstraSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/DijkstraSearch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/NodeInformation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/NodeInformation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/SearchResultImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/SearchResultImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/StartToDestStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/StartToDestStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/interfaces/BreadthFirstSearchTemplate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/interfaces/BreadthFirstSearchTemplate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/interfaces/EstimationFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/interfaces/EstimationFunction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/interfaces/NodeStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/interfaces/NodeStatus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/interfaces/ObservableSearchResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/interfaces/ObservableSearchResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/interfaces/SearchAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/interfaces/SearchAlgorithm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/interfaces/SearchResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/interfaces/SearchResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/interfaces/SearchStopStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/interfaces/SearchStopStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/factory/GraphFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/factory/GraphFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/factory/IOFactory$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/factory/IOFactory$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/factory/IOFactory$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/factory/IOFactory$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/factory/IOFactory$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/factory/IOFactory$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/factory/IOFactory$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/factory/IOFactory$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/factory/IOFactory$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/factory/IOFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/factory/IOFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/factory/MazeFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/factory/MazeFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/factory/SearchFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/factory/SearchFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/factory/SearchStopFactory$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/factory/SearchStopFactory$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/factory/SearchStopFactory$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/factory/SearchStopFactory$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/factory/SearchStopFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/factory/SearchStopFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/io/interfaces/GraphIO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/io/interfaces/GraphIO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/io/interfaces/GraphReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/io/interfaces/GraphReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/io/interfaces/GraphWriter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/io/interfaces/GraphWriter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/io/interfaces/ParseException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/io/interfaces/ParseException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/model/GXLWriterTemplate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/model/GXLWriterTemplate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/model/GraphImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/model/GraphImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/model/LabelMapGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/model/LabelMapGraph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/model/ObservableGraphimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/model/ObservableGraphimpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/model/TwoDimGXLReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/model/TwoDimGXLReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/model/TwoDimGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/model/TwoDimGraph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/model/TwoDimGraphDotIO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/model/TwoDimGraphDotIO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/model/TwoDimGraphGXLWriter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/model/TwoDimGraphGXLWriter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/model/XYNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/model/XYNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/model/interfaces/Edge.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/model/interfaces/Edge.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/model/interfaces/GXLReaderTemplate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/model/interfaces/GXLReaderTemplate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/model/interfaces/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/model/interfaces/Graph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/model/interfaces/GraphWithObservableModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/model/interfaces/GraphWithObservableModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/model/interfaces/GraphWithObservableQueries.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/model/interfaces/GraphWithObservableQueries.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/model/interfaces/ObservableGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/model/interfaces/ObservableGraph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/model/interfaces/WeightedGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/model/interfaces/WeightedGraph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/Arrow.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/Arrow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/GUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/GraphicConfigs.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/GraphicConfigs.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/GuiUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/GuiUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/control/Algorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/control/Algorithm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/control/GraphController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/control/GraphController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/controlView/AlgorithmControlView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/controlView/AlgorithmControlView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/controlView/GraphControlView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/controlView/GraphControlView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/controlView/GridControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/controlView/GridControl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/graphViews/GraphCircleView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/graphViews/GraphCircleView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/graphViews/GraphPixelView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/graphViews/GraphPixelView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/graphViews/GraphRawPixelView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/graphViews/GraphRawPixelView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/graphViews/GraphViewMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/graphViews/GraphViewMode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/graphViews/GraphViews.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/graphViews/GraphViews.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +50,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="exceleditor.install" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../jdom/build/package/jdom-2.x-2022.03.26.13.09.jar" />
+    <property name="last_opened_file_path" value="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/17.0.2/javafx-controls-17.0.2.jar" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.42988506" />
