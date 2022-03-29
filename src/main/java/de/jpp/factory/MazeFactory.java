@@ -6,10 +6,21 @@ import de.jpp.model.TwoDimGraph;
 import de.jpp.model.XYNode;
 
 import java.awt.image.BufferedImage;
+import java.util.Collection;
+import java.util.Map;
 import java.util.Random;
+import java.util.Set;
 
-public class MazeFactory {
+public class MazeFactory implements Maze {
 
+    private boolean[][] maze;
+
+    public MazeFactory() {
+    }
+
+    public MazeFactory(boolean[][] maze) {
+        this.maze = maze;
+    }
 
     /**
      * Creates a new empty maze with the specified width and height
@@ -54,4 +65,38 @@ public class MazeFactory {
         throw new UnsupportedOperationException("not supported yet!");
     }
 
+    @Override
+    public void setHWall(int x, int y, boolean wallActive) {
+        maze[x][y] = wallActive;
+    }
+
+    @Override
+    public void setVWall(int x, int y, boolean wallActive) {
+        maze[x][y] = wallActive;
+    }
+
+    @Override
+    public void setAllWalls(boolean wallActive) {
+
+    }
+
+    @Override
+    public int getWidth() {
+        return maze[0].length;
+    }
+
+    @Override
+    public int getHeight() {
+        return maze.length;
+    }
+
+    @Override
+    public boolean isHWallActive(int x, int y) {
+        return maze[x][y];
+    }
+
+    @Override
+    public boolean isVWallActive(int x, int y) {
+        return maze[x][y];
+    }
 }

@@ -202,6 +202,8 @@ public class TwoDimGraphDotIO  implements GraphWriter, GraphReader {
             }
             graph.addEdge(map.get(id1),map.get(id2),Optional.of(Double.parseDouble(annotation)));
         }
+        else
+            throw new ParseException("Invalid Format!");
     }
 
     public void parseLine(TwoDimGraph graph, HashMap<Integer, XYNode> map, String line)
@@ -289,7 +291,7 @@ public class TwoDimGraphDotIO  implements GraphWriter, GraphReader {
         }
     }
 
-    public HashMap<String, String> parseAnnotation(String line)
+    public HashMap<String, String> parseAnnotation(String line) throws ParseException
     {
         HashMap<String, String> map = new HashMap<>();
         Pattern p = Pattern.compile("\\[(\s*)([a-zA-Z]*)([0-9]*)=(((-?)(0|([1-9][0-9]*))(.[0-9]+)?){1})(\s*)\\]");
@@ -301,6 +303,8 @@ public class TwoDimGraphDotIO  implements GraphWriter, GraphReader {
                 map.put(m.group().split("=")[0],m.group().split("=")[1]);
             }
         }
+        else
+            throw new ParseException("Invalid Format!");
         return map;
     }
 }

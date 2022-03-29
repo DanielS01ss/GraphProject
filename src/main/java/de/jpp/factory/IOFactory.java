@@ -166,6 +166,8 @@ public class IOFactory {
                             }
                             map.put(id,new XYNode(label,x,y));
                         }
+                        else
+                            throw new ParseException("Invalid Node Format!");
                         if(edgeMatcher.matches())
                         {
                             Pattern distPattern = Pattern.compile("(dist=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1}");
@@ -189,6 +191,8 @@ public class IOFactory {
                             }
                             graph1.addEdge(map.get(id1),map.get(id2),Optional.of(Double.parseDouble(annotation)));
                         }
+                        else
+                            throw new ParseException("Invalid Edge Format!");
                     }
                 }
                 catch (Exception e)
@@ -227,8 +231,8 @@ public class IOFactory {
                        {
                            if(result[counter][col-1] == -1)
                            {
-                               label = "(" + col + "|" + counter + ")";
-                               nodeList.add(new XYNode(label,col,counter+1));
+                               label = "(" + (col) + "|" + counter + ")";
+                               nodeList.add(new XYNode(label,col,counter));
                                label = "(" + (col-1) + "|" + counter + ")";
                                try {
                                    twoDimGraph.addEdge(currentNode, new XYNode(label, col - 1, counter), Optional.of(1.0));
@@ -248,7 +252,7 @@ public class IOFactory {
                            nodeList.add(currentNode);
                            if(result[counter+1][col] == -1)
                            {
-                               label = "(" + col + "|" + counter+1 + ")";
+                               label = "(" + col + "|" + (counter+1) + ")";
                                try {
                                    twoDimGraph.addEdge(currentNode, new XYNode(label, col, counter+1), Optional.of(1.0));
                                    twoDimGraph.addEdge(new XYNode(label, col, counter+1), currentNode, Optional.of(1.0));
@@ -332,9 +336,11 @@ public class IOFactory {
      *
      * @return a new GraphReader instance which parses a LabelMapGraph from a GXL-String
      */
+
 //    public GraphReader<String, Map<String, String>, LabelMapGraph, String> getLabelMapGraphGxlReader() {
 //        throw new UnsupportedOperationException("not supported yet!");
 //    }
+
 
     /**
      * Returns a new GraphWriter instances which outputs a TwoDimGraph as a GXL-String
