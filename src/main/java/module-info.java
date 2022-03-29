@@ -4,6 +4,7 @@ module com.example.graphen {
     requires java.desktop;
     requires gxl;
     requires java.security.jgss;
+    requires org.jdom2;
     requires jdom2;
 
 

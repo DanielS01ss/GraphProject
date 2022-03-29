@@ -9,9 +9,9 @@ import de.jpp.model.TwoDimGraph;
 import de.jpp.model.XYNode;
 import de.jpp.model.interfaces.Edge;
 
+import java.util.*;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
-import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -261,13 +261,7 @@ public class IOFactory {
      * @return a new GraphReader instance which parses a LabelMapGraph from a GXL-String
      */
     public GraphReader<String, Map<String, String>, LabelMapGraph, String> getLabelMapGraphGxlReader() {
-        GraphReader<String,Map<String, String>,LabelMapGraph,String> graphReader = new GraphReader<String, Map<String, String>, LabelMapGraph, String>() {
-            @Override
-            public LabelMapGraph read(String input) throws ParseException {
-                return null;
-            }
-        };
-        return null;
+        throw new UnsupportedOperationException("not supported yet!");
     }
 
     /**
