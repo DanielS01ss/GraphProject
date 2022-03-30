@@ -4,6 +4,7 @@ module com.example.graphen {
     requires java.desktop;
     requires gxl;
     requires org.jdom2;
+    requires jdom2;
 
 
     opens com.example.graphen to javafx.fxml;
