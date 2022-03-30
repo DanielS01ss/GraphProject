@@ -1,5 +1,6 @@
-package de.jpp.model;
+package de.jpp.io;
 
+import de.jpp.model.XYNode;
 import de.jpp.model.interfaces.Edge;
 import de.jpp.model.interfaces.Graph;
 
