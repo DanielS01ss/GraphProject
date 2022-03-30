@@ -13,11 +13,11 @@ import java.util.Optional;
  * A LabelMapGraph. <br>
  * The abstract-tag is only set because the tests will not compile otherwise. You should remove it!
  */
+
 public class LabelMapGraph extends GraphImpl<String, Map<String, String>> {
 
     public GraphReader<String, Map<String, String>, LabelMapGraph, Element> getLabelMapGraphGxlReader()
     {
         return null;
-    }
-
+    }    
 }

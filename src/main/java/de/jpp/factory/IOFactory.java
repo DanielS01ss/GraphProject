@@ -1,14 +1,31 @@
 package de.jpp.factory;
 
 
+import com.example.graphen.ApplicationResources;
 import de.jpp.io.interfaces.GraphReader;
 import de.jpp.io.interfaces.GraphWriter;
 import de.jpp.io.interfaces.ParseException;
 import de.jpp.model.LabelMapGraph;
+import de.jpp.model.ObservableGraphimpl;
 import de.jpp.model.TwoDimGraph;
 import de.jpp.model.XYNode;
 import de.jpp.model.interfaces.Edge;
 
+<<<<<<< HEAD
+=======
+import java.io.*;
+
+import net.sourceforge.gxl.*;
+import org.jdom2.Document;
+import org.jdom2.Element;
+import org.jdom2.JDOMException;
+import org.jdom2.input.SAXBuilder;
+import org.jdom2.output.Format;
+import org.jdom2.output.XMLOutputter;
+
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+>>>>>>> master
 import java.util.*;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
@@ -18,14 +35,75 @@ import org.jdom2.*;
 
 public class IOFactory {
 
-
     /**
      * Returns a new GraphReader instance which parses a TwoDimGraph from a GXL-String
      *
      * @return a new GraphReader instance which parses a TwoDimGraph from a GXL-String
      */
     public GraphReader<XYNode, Double, TwoDimGraph, String> getTwoDimGxlReader() {
-        throw new UnsupportedOperationException("not supported yet!");
+        GraphReader<XYNode,Double,TwoDimGraph,String> graphReader = new GraphReader<XYNode, Double, TwoDimGraph, String>() {
+            @Override
+            public TwoDimGraph read(String input) throws ParseException {
+                String filePath = "C:\\Users\\stanc\\Desktop\\Java Challenge\\2022.3\\TestFiles\\gxl\\valid\\maze.gxl";
+                TwoDimGraph gr = new TwoDimGraph();
+                List<XYNode> nodes = new ArrayList<XYNode>();
+                try{
+                    SAXBuilder sax = new SAXBuilder();
+                    Document doc = sax.build(new File(filePath));
+                    Element rootNode = doc.getRootElement();
+                    List<Element> list = rootNode.getChildren("graph");
+
+                    for(Element  target:list)
+                    {
+                        List<Element> el = target.getChildren("node");
+                        double x,y;
+                        String label;
+                        for(Element it:el)
+                        {
+                            label = it.getAttributeValue("id");
+                            x = Double.parseDouble(((it.getChildren().get(0)).getChildText("float")));
+                            y = Double.parseDouble((it.getChildren().get(1)).getChildText("float"));
+                            XYNode newNode = new XYNode(label,x,y);
+                            gr.addNode(newNode);
+                            nodes.add(newNode);
+                        }
+
+                        List<Element> el2 = target.getChildren("edge");
+                        for (Element elem:el2)
+                        {
+                            int start = Integer.parseInt(elem.getAttributeValue("from"));
+                            int end = Integer.parseInt(elem.getAttributeValue("to"));
+                            Double cost = Double.parseDouble(elem.getChildren().get(0).getChildText("float"));
+                            XYNode s = new XYNode();
+                            XYNode e = new XYNode();
+                            for(int i=0;i<nodes.size();i++)
+                            {
+
+                                if(nodes.get(i).getLabel().equals(String.valueOf(start)))
+                                {
+                                    s = nodes.get(i);
+                                }
+                                if(nodes.get(i).getLabel().equals(String.valueOf(end)))
+                                {
+                                    e = nodes.get(i);
+                                }
+                            }
+                            Optional<Double> op = Optional.of(cost);
+                            gr.addEdge(s,e,op);
+                        }
+                    }
+
+                }catch(IOException | JDOMException e)
+                {
+                    e.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                ApplicationResources.appGraph = gr;
+                return gr;
+            }
+        };
+        return graphReader;
     }
 
     /**
@@ -261,9 +339,17 @@ public class IOFactory {
      *
      * @return a new GraphReader instance which parses a LabelMapGraph from a GXL-String
      */
+<<<<<<< HEAD
     public GraphReader<String, Map<String, String>, LabelMapGraph, String> getLabelMapGraphGxlReader() {
         throw new UnsupportedOperationException("not supported yet!");
     }
+=======
+
+//    public GraphReader<String, Map<String, String>, LabelMapGraph, String> getLabelMapGraphGxlReader() {
+//        throw new UnsupportedOperationException("not supported yet!");
+//    }
+
+>>>>>>> master
 
     /**
      * Returns a new GraphWriter instances which outputs a TwoDimGraph as a GXL-String
@@ -271,7 +357,90 @@ public class IOFactory {
      * @return a new GraphWriter instances which outputs a TwoDimGraph as a GXL-String
      */
     public GraphWriter<XYNode, Double, TwoDimGraph, String> getTwoDimGxlWriter() {
-        throw new UnsupportedOperationException("not supported yet!");
+        ///tragem toate nodurile
+        ///tragem toate edge-urile
+        GraphWriter<XYNode,Double,TwoDimGraph,String> graphW = new GraphWriter<XYNode, Double, TwoDimGraph, String>() {
+            @Override
+            public String write(TwoDimGraph graph) {
+                Document doc = new Document();
+                doc.setRootElement(new Element("gxl"));
+                Element gr = new Element("graph");
+
+                Collection<XYNode> nodes = graph.getNodes();
+
+                int i=1;
+                for(XYNode x : nodes)
+                {
+                    Element node = new Element("node");
+                    node.setAttribute("id",String.valueOf(i));
+
+                    Element attr = new Element("attr");
+                    attr.setAttribute("name","x");
+                    Element floatAt = new Element("float");
+                    floatAt.setText(String.valueOf(x.getX()));
+                    attr.addContent(floatAt);
+                    node.addContent(attr);
+
+                    attr = new Element("attr");
+                    attr.setAttribute("name","y");
+                    floatAt = new Element("float");
+                    floatAt.setText(String.valueOf(x.getY()));
+                    attr.addContent(floatAt);
+                    node.addContent(attr);
+
+                    attr = new Element("attr");
+                    attr.setAttribute("name","description");
+                    floatAt = new Element("string");
+                    floatAt.setText(String.valueOf(x.getLabel()));
+                    attr.addContent(floatAt);
+                    node.addContent(attr);
+
+                    gr.addContent(node);
+                    i++;
+                }
+
+                Collection<Edge<XYNode,Double>> edges = graph.getEdges();
+
+                for(Edge<XYNode,Double> ed:edges)
+                {
+                    Element edgeNode = new Element("edge");
+                    edgeNode.setAttribute("id",String.valueOf(i));
+                    XYNode st = ed.getStart();
+                    XYNode end = ed.getDestination();
+                    edgeNode.setAttribute("from",st.getLabel());
+                    edgeNode.setAttribute("to",end.getLabel());
+                    Element attr = new Element("attr");
+                    attr = new Element("attr");
+                    attr.setAttribute("name","cost");
+                    Element floatAt = new Element("float");
+                    Double val = ed.getAnnotation().get();
+                    floatAt.setText( String.valueOf(val));
+                    attr.addContent(floatAt);
+                    edgeNode.addContent(attr);
+                    gr.addContent(edgeNode);
+                    i++;
+                }
+
+                doc.getRootElement().addContent(gr);
+
+                XMLOutputter xmlOutputter = new XMLOutputter();
+
+                // pretty print
+                xmlOutputter.setFormat(Format.getPrettyFormat());
+                OutputStream out = System.out;
+                String xmlString;
+                try{
+                    xmlOutputter.output(doc,out);
+                    xmlString = out.toString();
+                }catch(IOException e)
+                {
+                    System.out.println(e);
+                    return null;
+                }
+                return  xmlString;
+            }
+        };
+        return graphW;
     }
 
     /**
@@ -313,8 +482,65 @@ public class IOFactory {
      * @return a new GraphWriter instance which outputs a LabelMapGraph as GXL-String
      */
     public GraphWriter<String, Map<String, String>, LabelMapGraph, String> getLabelMapGraphGxlWriter() {
-        throw new UnsupportedOperationException("not supported yet!");
+
+        GraphWriter<String,Map<String,String>,LabelMapGraph,String> gWrite = new GraphWriter<String, Map<String, String>, LabelMapGraph, String>() {
+            @Override
+            public String write(LabelMapGraph graph) {
+               String result="";
+               Collection<String> nodes = graph.getNodes();
+               Collection<Edge<String,Map<String,String>>> edges = graph.getEdges();
+
+               return result;
+            }
+        };
+
+        return gWrite;
     }
 
+    public GraphReader<String, Map<String, String>, LabelMapGraph,String> getLabelMapGraphGxlReader()
+    {
+        GraphReader<String, Map<String, String>, LabelMapGraph,String> grReader = new GraphReader<String, Map<String, String>, LabelMapGraph, String>() {
+            @Override
+            public LabelMapGraph read(String input) throws ParseException {
+                ///public GraphImpl(ArrayList<N> nodes, HashMap<N, ArrayList<Edge>> edges)
+                ///ArrayList<String> Nodes
+                ///HashMap <String,ArrayList<Edge>>
+                ///Deci la node <String>
+                ///la edges HashMap<String,ArrayList<Edge>> edges;
+                LabelMapGraph lGraph = new LabelMapGraph();
+                InputStream stream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
+                SAXBuilder sax = new SAXBuilder();
+                Document doc;
+                try{
+                    doc = sax.build(stream);
+                    Element rootNode = doc.getRootElement();
+                    List<Element> target = rootNode.getChildren("node");
+                    for(Element el:target)
+                    {
+                        String nodeData = el.getAttributeValue("id");
+                        lGraph.addNode(nodeData);
+                    }
 
+                    target = rootNode.getChildren("edge");
+
+                    for(Element el:target)
+                    {
+                        ///start dest annotation
+                        String start = el.getAttributeValue("from");
+                        String end = el.getAttributeValue("to");
+                        Edge eg = new Edge(start,end);
+                        lGraph.addEdge(start,end);
+                    }
+
+                } catch (JDOMException | IOException ex)
+                {
+                    System.out.println(ex);
+                }
+
+                return lGraph;
+            }
+        };
+
+        return grReader;
+    }
 }

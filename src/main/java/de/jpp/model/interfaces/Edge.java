@@ -5,7 +5,6 @@ import java.util.Optional;
 
 public class Edge<N, A> {
 
-
     private N start;
     private N dest;
     private Optional<A> annotation;

@@ -4,6 +4,7 @@ import de.jpp.model.interfaces.Edge;
 import de.jpp.model.interfaces.Graph;
 import org.w3c.dom.Node;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class GraphImpl<N, A> implements Graph<N,A> {
@@ -131,13 +132,17 @@ public class GraphImpl<N, A> implements Graph<N,A> {
     }
 
     @Override
-    public Collection<Edge<N, A>> getEdges() {
+    public Collection<Edge<N,A>> getEdges() {
+
         ArrayList<Edge> list = new ArrayList<>();
         for(Map.Entry<N,ArrayList<Edge>> s : edges.entrySet())
         {
             list.addAll(s.getValue());
         }
-        return (Collection) list;
+
+
+        return (Collection)list;
+
     }
 
     @Override
