@@ -10,6 +10,9 @@ public class XYNode {
     private double y;
 
     public XYNode() {
+        label = "";
+        x = 0;
+        y = 0;
     }
     public XYNode(XYNode node) {
         this.label = node.label;

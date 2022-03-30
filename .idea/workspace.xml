@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27482df2-f0db-458a-b20d-c25ad7469258" name="Changes" comment="">
+    <list default="true" id="09eaca19-4b78-45ad-82bb-5b5016f0cd7f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/algorithm/BreadthFirstSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/algorithm/BreadthFirstSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/algorithm/DijkstraSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/algorithm/DijkstraSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/algorithm/SearchResultImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/algorithm/SearchResultImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/factory/SearchFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/factory/SearchFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/model/XYNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/model/XYNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
