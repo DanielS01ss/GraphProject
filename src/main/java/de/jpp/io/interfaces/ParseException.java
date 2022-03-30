@@ -3,13 +3,22 @@ package de.jpp.io.interfaces;
 public class ParseException extends Exception {
 
 
-    public ParseException(String msg) {
-        throw new UnsupportedOperationException("not supported yet!");
-
+    public ParseException(String msg)  {
+        try {
+            throw new Exception(msg);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 
-    public ParseException() {
-        throw new UnsupportedOperationException("not supported yet!");
+    public ParseException()  {
+        try {
+            throw new Exception("Invalid Format!");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 

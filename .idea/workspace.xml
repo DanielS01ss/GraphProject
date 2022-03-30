@@ -6,12 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="09eaca19-4b78-45ad-82bb-5b5016f0cd7f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/algorithm/BreadthFirstSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/algorithm/BreadthFirstSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/algorithm/DijkstraSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/algorithm/DijkstraSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/algorithm/SearchResultImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/algorithm/SearchResultImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/factory/SearchFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/factory/SearchFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/model/XYNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/model/XYNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/TestClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/TestClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/io/interfaces/ParseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/io/interfaces/ParseException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/model/interfaces/GXLReaderTemplate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/TestClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/TestClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/BreadthFirstSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/BreadthFirstSearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/DijkstraSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/DijkstraSearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/SearchResultImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/SearchResultImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/factory/SearchFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/factory/SearchFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/model/XYNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/model/XYNode.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +100,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="aba2849c-322c-4eb3-99b9-7d642b20274e" name="Changes" comment="" />
+      <changelist id="09eaca19-4b78-45ad-82bb-5b5016f0cd7f" name="Changes" comment="" />
       <created>1647624744600</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
