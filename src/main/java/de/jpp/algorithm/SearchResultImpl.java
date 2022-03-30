@@ -2,7 +2,6 @@ package de.jpp.algorithm;
 
 import de.jpp.algorithm.interfaces.NodeStatus;
 import de.jpp.algorithm.interfaces.ObservableSearchResult;
-import de.jpp.algorithm.interfaces.SearchResult;
 import de.jpp.model.XYNode;
 import de.jpp.model.interfaces.Edge;
 
@@ -17,6 +16,10 @@ public class SearchResultImpl<N> implements ObservableSearchResult {
     private ArrayList<BiConsumer> onClose;
 
     public SearchResultImpl() {
+        statusMap = new HashMap<>();
+        infoMap = new HashMap<>();
+        onOpen = new ArrayList<>();
+        onClose = new ArrayList<>();
     }
 
     public SearchResultImpl(HashMap<N, NodeStatus> statusMap, HashMap<N, NodeInformation> infoMap, ArrayList<BiConsumer> onOpen, ArrayList<BiConsumer> onClose) {

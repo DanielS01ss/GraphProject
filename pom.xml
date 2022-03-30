@@ -48,7 +48,12 @@
             <artifactId>jaxen</artifactId>
             <version>1.1.6</version>
         </dependency>
-        
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
+            <version>17-ea+11</version>
+        </dependency>
+
     </dependencies>
 
     <build>

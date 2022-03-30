@@ -1,10 +1,10 @@
 package de.jpp.factory;
 
-import de.jpp.algorithm.interfaces.*;
+import de.jpp.algorithm.*;
+import de.jpp.algorithm.interfaces.EstimationFunction;
+import de.jpp.algorithm.interfaces.SearchAlgorithm;
 import de.jpp.model.interfaces.Graph;
 import de.jpp.model.interfaces.WeightedGraph;
-
-import java.util.ArrayList;
 
 /**
  * A class which is collecting several methods to create new SearchAlgorithms on Graphs with specified types
@@ -24,7 +24,8 @@ public class SearchFactory<N, A> {
      * @return a new SearchAlgorithm instance which searches the specified Graph with a DepthFirstSearch starting at the specified start node
      */
     public <G extends Graph<N, A>> SearchAlgorithm<N, A, G> getDepthFirstSearch(G graph, N start) {
-        return null;
+
+        return new DepthFirstSearch<>(false,graph,start,new SearchResultImpl<>());
     }
 
     /**
@@ -36,7 +37,7 @@ public class SearchFactory<N, A> {
      * @return a new SearchAlgorithm instance which searches the specified Graph with a BreadthFirstSearch starting at the specified start node
      */
     public <G extends Graph<N, A>> SearchAlgorithm<N, A, G> getBreadthFirstSearch(G graph, N start) {
-        throw new UnsupportedOperationException("not supported yet!");
+        return new BreadthFirstSearch<>(false,graph,start,new SearchResultImpl<>());
     }
 
     /**
@@ -48,7 +49,7 @@ public class SearchFactory<N, A> {
      * @return a new SearchAlgorithm instance which searches the specified Graph with a BreadthFirstSearch starting at the specified start node
      */
     public <G extends WeightedGraph<N, A>> SearchAlgorithm<N, A, G> getDijkstra(G graph, N start) {
-        throw new UnsupportedOperationException("not supported yet!");
+        return new DijkstraSearch<>(false,graph,start,new SearchResultImpl<>());
     }
 
     /**
@@ -63,7 +64,7 @@ public class SearchFactory<N, A> {
      */
 
     public <G extends WeightedGraph<N, A>> SearchAlgorithm<N, A, G> getAStar(G graph, N start, N dest, EstimationFunction<N> estimationFunction) {
-        throw new UnsupportedOperationException("not supported yet!");
+        return new AStarSearch<>(false,graph,start,dest,new SearchResultImpl<>(),estimationFunction);
     }
 
 

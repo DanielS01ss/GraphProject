@@ -3,7 +3,7 @@ module com.example.graphen {
     requires javafx.fxml;
     requires java.desktop;
     requires gxl;
-    requires org.jdom2;
+    requires java.security.jgss;
     requires jdom2;
 
 
