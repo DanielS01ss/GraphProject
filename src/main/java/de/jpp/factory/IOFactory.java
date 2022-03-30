@@ -37,66 +37,153 @@ public class IOFactory {
      *
      * @return a new GraphReader instance which parses a TwoDimGraph from a GXL-String
      */
-    public GraphReader<XYNode, Double, TwoDimGraph, String> getTwoDimGxlReader() {
+    public  GraphReader<XYNode, Double, TwoDimGraph, String> getTwoDimGxlReader() {
         GraphReader<XYNode,Double,TwoDimGraph,String> graphReader = new GraphReader<XYNode, Double, TwoDimGraph, String>() {
             @Override
             public TwoDimGraph read(String input) throws ParseException {
-                String filePath = "C:\\Users\\stanc\\Desktop\\Java Challenge\\2022.3\\TestFiles\\gxl\\valid\\maze.gxl";
+
                 TwoDimGraph gr = new TwoDimGraph();
                 List<XYNode> nodes = new ArrayList<XYNode>();
                 try{
                     SAXBuilder sax = new SAXBuilder();
-                    Document doc = sax.build(new File(filePath));
+                    InputStream stream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
+                    Document doc = sax.build(stream);
                     Element rootNode = doc.getRootElement();
                     List<Element> list = rootNode.getChildren("graph");
 
                     for(Element  target:list)
                     {
+                        boolean labelFound = false;
+                        boolean xFound = false;
+                        boolean yFound = false;
                         List<Element> el = target.getChildren("node");
-                        double x,y;
+                        double x=-1.0,y=-1.0;
                         String label;
+                        String textLabel;
                         for(Element it:el)
                         {
+                            //elements that are child of a node element
+                            List<Element> nodeChilds = it.getChildren();
                             label = it.getAttributeValue("id");
-                            x = Double.parseDouble(((it.getChildren().get(0)).getChildText("float")));
-                            y = Double.parseDouble((it.getChildren().get(1)).getChildText("float"));
-                            XYNode newNode = new XYNode(label,x,y);
-                            gr.addNode(newNode);
-                            nodes.add(newNode);
+
+                            for(Element nodeChild:nodeChilds)
+                            {
+                                if(nodeChild.getAttributeValue("name").equals("x"))
+                                {
+                                    if(nodeChild.getChildren().size() ==0)
+                                    {
+                                        throw new JDOMException();
+
+                                    }
+                                    x = Double.parseDouble(nodeChild.getChildren().get(0).getText());
+                                    xFound = true;
+                                } else if (nodeChild.getAttributeValue("name").equals("y"))
+                                {
+                                    if(nodeChild.getChildren().size() ==0)
+                                    {
+                                        throw new JDOMException();
+
+                                    }
+                                    y = Double.parseDouble(nodeChild.getChildren().get(0).getText());
+                                    yFound = true;
+                                } else if(nodeChild.getAttributeValue("name").equals("description"))
+                                {
+                                    if(nodeChild.getChildren().size() ==0)
+                                    {
+                                        throw new JDOMException();
+
+                                    }
+                                    textLabel = nodeChild.getChildren().get(0).getText();
+                                    labelFound = true;
+                                }
+
+                            }
+                            if(xFound && yFound && labelFound)
+                            {
+                                XYNode newNode = new XYNode(label,x,y);
+                                gr.addNode(newNode);
+                                nodes.add(newNode);
+                            } else{
+                                throw new JDOMException();
+                            }
+
+
                         }
 
                         List<Element> el2 = target.getChildren("edge");
                         for (Element elem:el2)
                         {
-                            int start = Integer.parseInt(elem.getAttributeValue("from"));
-                            int end = Integer.parseInt(elem.getAttributeValue("to"));
-                            Double cost = Double.parseDouble(elem.getChildren().get(0).getChildText("float"));
+                            boolean isInteger = false;
+                            String startStr="";
+                            String endStr="";
+                            int start = -1;
+                            int end = -1;
+                            try{
+                                 start = Integer.parseInt(elem.getAttributeValue("from"));
+                                isInteger = true;
+                            }catch (NumberFormatException ex)
+                            {
+                                startStr = elem.getAttributeValue("from");
+
+                            }
+
+                            if(isInteger)
+                            {
+                                end = Integer.parseInt(elem.getAttributeValue("to"));
+                            } else {
+                                endStr = elem.getAttributeValue("to");
+                            }
+
+                            Double cost = -1.0;
+                            Collection<Element> attrList = elem.getChildren();
+                            for(Element attrElem:attrList)
+                            {
+                                if(attrElem.getAttributeValue("name").equals("cost"))
+                                {
+                                    cost = Double.parseDouble(attrElem.getChildText("float"));
+                                }
+                            }
+
                             XYNode s = new XYNode();
                             XYNode e = new XYNode();
                             for(int i=0;i<nodes.size();i++)
                             {
+                               if(isInteger)
+                               {
+                                   if(nodes.get(i).getLabel().equals(String.valueOf(start)))
+                                   {
+                                       s = nodes.get(i);
+                                   }
+                                   if(nodes.get(i).getLabel().equals(String.valueOf(end)))
+                                   {
+                                       e = nodes.get(i);
+                                   }
+                               } else {
+                                   if(nodes.get(i).getLabel().equals(startStr))
+                                   {
+                                       s = nodes.get(i);
+                                   }
+                                   if(nodes.get(i).getLabel().equals(endStr))
+                                   {
+                                       e = nodes.get(i);
+                                   }
+                               }
 
-                                if(nodes.get(i).getLabel().equals(String.valueOf(start)))
-                                {
-                                    s = nodes.get(i);
-                                }
-                                if(nodes.get(i).getLabel().equals(String.valueOf(end)))
-                                {
-                                    e = nodes.get(i);
-                                }
                             }
                             Optional<Double> op = Optional.of(cost);
                             gr.addEdge(s,e,op);
                         }
                     }
 
-                }catch(IOException | JDOMException e)
+                }catch(IOException | JDOMException |NumberFormatException e)
                 {
                     e.printStackTrace();
+                    return null;
                 } catch (Exception e) {
                     e.printStackTrace();
+                    return null;
                 }
-                ApplicationResources.appGraph = gr;
+//                ApplicationResources.appGraph = gr;
                 return gr;
             }
         };
@@ -347,7 +434,7 @@ public class IOFactory {
      *
      * @return a new GraphWriter instances which outputs a TwoDimGraph as a GXL-String
      */
-    public GraphWriter<XYNode, Double, TwoDimGraph, String> getTwoDimGxlWriter() {
+    public  GraphWriter<XYNode, Double, TwoDimGraph, String> getTwoDimGxlWriter() {
         ///tragem toate nodurile
         ///tragem toate edge-urile
         GraphWriter<XYNode,Double,TwoDimGraph,String> graphW = new GraphWriter<XYNode, Double, TwoDimGraph, String>() {

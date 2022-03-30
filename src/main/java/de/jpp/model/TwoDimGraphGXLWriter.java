@@ -118,7 +118,23 @@ public class TwoDimGraphGXLWriter extends GXLWriterTemplate {
     }
 
     @Override
-    public Element writeEdge(Edge x)
+    public  Element writeEdge(Edge x)
+    {
+        Element edgeElem = new Element("edge");
+        XYNode startNode = (XYNode)x.getStart();
+        XYNode endNode = (XYNode)x.getDestination();
+        edgeElem.setAttribute("from",startNode.getLabel());
+        edgeElem.setAttribute("to",endNode.getLabel());
+        Element attr = new Element("attr");
+        attr.setAttribute("name","cost");
+        Element floatVal = new Element("float");
+        floatVal.setText((String) x.getAnnotation().get());
+        attr.setContent(floatVal);
+        edgeElem.setContent(attr);
+        return edgeElem;
+    }
+
+    public static  Element writeEdge1(Edge x)
     {
         Element edgeElem = new Element("edge");
         XYNode startNode = (XYNode)x.getStart();
