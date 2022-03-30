@@ -1,7 +1,6 @@
 package de.jpp.factory;
 
 
-import com.example.graphen.ApplicationResources;
 import de.jpp.io.interfaces.GraphReader;
 import de.jpp.io.interfaces.GraphWriter;
 import de.jpp.io.interfaces.ParseException;
@@ -18,7 +17,10 @@ import org.jdom2.output.XMLOutputter;
 
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
-import java.io.*;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.regex.Matcher;
@@ -113,7 +115,7 @@ public class IOFactory {
                             int start = -1;
                             int end = -1;
                             try{
-                                 start = Integer.parseInt(elem.getAttributeValue("from"));
+                                start = Integer.parseInt(elem.getAttributeValue("from"));
                                 isInteger = true;
                             }catch (NumberFormatException ex)
                             {
@@ -142,26 +144,26 @@ public class IOFactory {
                             XYNode e = new XYNode();
                             for(int i=0;i<nodes.size();i++)
                             {
-                               if(isInteger)
-                               {
-                                   if(nodes.get(i).getLabel().equals(String.valueOf(start)))
-                                   {
-                                       s = nodes.get(i);
-                                   }
-                                   if(nodes.get(i).getLabel().equals(String.valueOf(end)))
-                                   {
-                                       e = nodes.get(i);
-                                   }
-                               } else {
-                                   if(nodes.get(i).getLabel().equals(startStr))
-                                   {
-                                       s = nodes.get(i);
-                                   }
-                                   if(nodes.get(i).getLabel().equals(endStr))
-                                   {
-                                       e = nodes.get(i);
-                                   }
-                               }
+                                if(isInteger)
+                                {
+                                    if(nodes.get(i).getLabel().equals(String.valueOf(start)))
+                                    {
+                                        s = nodes.get(i);
+                                    }
+                                    if(nodes.get(i).getLabel().equals(String.valueOf(end)))
+                                    {
+                                        e = nodes.get(i);
+                                    }
+                                } else {
+                                    if(nodes.get(i).getLabel().equals(startStr))
+                                    {
+                                        s = nodes.get(i);
+                                    }
+                                    if(nodes.get(i).getLabel().equals(endStr))
+                                    {
+                                        e = nodes.get(i);
+                                    }
+                                }
 
                             }
                             Optional<Double> op = Optional.of(cost);
@@ -428,7 +430,7 @@ public class IOFactory {
      *
      * @return a new GraphWriter instances which outputs a TwoDimGraph as a GXL-String
      */
-    public  GraphWriter<XYNode, Double, TwoDimGraph, String> getTwoDimGxlWriter() {
+    public GraphWriter<XYNode, Double, TwoDimGraph, String> getTwoDimGxlWriter() {
         ///tragem toate nodurile
         ///tragem toate edge-urile
         GraphWriter<XYNode,Double,TwoDimGraph,String> graphW = new GraphWriter<XYNode, Double, TwoDimGraph, String>() {
