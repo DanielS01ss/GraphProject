@@ -1,21 +1,11 @@
 package com.example.graphen;
 
-import de.jpp.factory.IOFactory;
-import de.jpp.io.interfaces.GraphReader;
-import de.jpp.io.interfaces.GraphWriter;
-import de.jpp.io.interfaces.ParseException;
-import de.jpp.model.TwoDimGraph;
-import de.jpp.model.TwoDimGraphGXLWriter;
-import de.jpp.model.XYNode;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.jdom2.Element;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
 
 public class HelloApplication extends Application {
     @Override

@@ -1,7 +1,9 @@
-package de.jpp.model;
+package de.jpp.io;
 
 import com.example.graphen.ApplicationResources;
+import de.jpp.io.GXLWriterTemplate;
 import de.jpp.io.interfaces.ParseException;
+import de.jpp.model.XYNode;
 import de.jpp.model.interfaces.Edge;
 import de.jpp.model.interfaces.Graph;
 

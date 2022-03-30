@@ -1,8 +1,10 @@
-package de.jpp.model;
+package de.jpp.io;
 
 import de.jpp.io.interfaces.GraphReader;
 import de.jpp.io.interfaces.GraphWriter;
 import de.jpp.io.interfaces.ParseException;
+import de.jpp.model.TwoDimGraph;
+import de.jpp.model.XYNode;
 import de.jpp.model.interfaces.Edge;
 import de.jpp.model.interfaces.Graph;
 
@@ -26,7 +28,7 @@ public class TwoDimGraphDotIO  implements GraphWriter, GraphReader {
             String label = " ";
             double x = 0;
             double y = 0;
-            HashMap<Integer,XYNode> map = new HashMap<>();
+            HashMap<Integer, XYNode> map = new HashMap<>();
             int id = 0;
             while (scanner.hasNextLine())
             {

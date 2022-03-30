@@ -1,15 +1,12 @@
-package de.jpp.model;
+package de.jpp.io;
 
-import de.jpp.GXLReaderTemplate;
+import de.jpp.model.XYNode;
 import de.jpp.model.interfaces.Graph;
 import org.jdom2.Attribute;
 import org.jdom2.Element;
 
 
-import javax.print.attribute.AttributeSet;
-
 import java.util.HashMap;
-import java.util.List;
 import java.util.Optional;
 
 public class TwoDimGXLReader extends GXLReaderTemplate {
