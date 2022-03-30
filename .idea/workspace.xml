@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09eaca19-4b78-45ad-82bb-5b5016f0cd7f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/TestClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/TestClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/io/interfaces/ParseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jpp/io/interfaces/ParseException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/jpp/model/interfaces/GXLReaderTemplate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/TestClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/TestClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/BreadthFirstSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/BreadthFirstSearch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/DijkstraSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/DijkstraSearch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/SearchResultImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/algorithm/SearchResultImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/factory/SearchFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/factory/SearchFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/jpp/model/XYNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/jpp/model/XYNode.class" afterDir="false" />
-    </list>
+    <list default="true" id="09eaca19-4b78-45ad-82bb-5b5016f0cd7f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
