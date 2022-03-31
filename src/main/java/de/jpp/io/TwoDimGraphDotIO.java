@@ -18,9 +18,9 @@ public class TwoDimGraphDotIO  implements GraphWriter, GraphReader {
         TwoDimGraph graph1 = new TwoDimGraph();
         try(Scanner scanner = new Scanner((String) input)) {
             String line = scanner.nextLine();
-            Pattern nodePattern1 = Pattern.compile("(([0-9]*){1})(\s*)\\[((label=n[0-9]*){1})(\s*)((x=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*)((y=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*)\\]");
-            Pattern nodePattern2 = Pattern.compile("([0-9]*)(\s*)\\[((x=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*)((y=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*)((label=n[0-9]*){1})(\s*)\\]");
-            Pattern edgePattern = Pattern.compile("(([0-9]*){1})(\s*)((->){1})(\s*)(([0-9]*){1})(\s*)(\\[)(\s*)((dist=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*)(\\])");
+            Pattern nodePattern1 = Pattern.compile("(([0-9]*){1})(\s*).((label=n[0-9]*){1})(\s*)((x=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*)((y=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*).");
+            Pattern nodePattern2 = Pattern.compile("([0-9]*)(\s*).((x=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*)((y=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*)((label=n[0-9]*){1})(\s*).");
+            Pattern edgePattern = Pattern.compile("(([0-9]*){1})(\s*)((->){1})(\s*)(([0-9]*){1})(\s*)(.)(\s*)((dist=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*)(.)");
             Matcher nodeMatcher1;
             Matcher nodeMatcher2;
             Matcher edgeMatcher;
@@ -126,8 +126,8 @@ public class TwoDimGraphDotIO  implements GraphWriter, GraphReader {
 
     public void parseNode(TwoDimGraph graph, HashMap<Integer, XYNode> map, String line) throws ParseException
     {
-        Pattern nodePattern1 = Pattern.compile("(([0-9]*){1})(\s*)\\[((label=n[0-9]*){1})(\s*)((x=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*)((y=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*)\\]");
-        Pattern nodePattern2 = Pattern.compile("([0-9]*)(\s*)\\[((x=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*)((y=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*)((label=n[0-9]*){1})(\s*)\\]");
+        Pattern nodePattern1 = Pattern.compile("(([0-9]*){1})(\s*).((label=n[0-9]*){1})(\s*)((x=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*)((y=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*).");
+        Pattern nodePattern2 = Pattern.compile("([0-9]*){1}(\s*).((x=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*)((y=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*)((label=n[0-9]*){1})(\s*).");
         Matcher nodeMatcher1 = nodePattern1.matcher(line);
         Matcher nodeMatcher2 = nodePattern2.matcher(line);
         Matcher matcher;
@@ -178,7 +178,7 @@ public class TwoDimGraphDotIO  implements GraphWriter, GraphReader {
 
     public void parseEdge(TwoDimGraph graph, HashMap<Integer, XYNode> map, String line) throws ParseException
     {
-        Pattern edgePattern = Pattern.compile("(([0-9]*){1})(\s*)((->){1})(\s*)(([0-9]*){1})(\s*)(\\[)(\s*)((dist=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*)(\\])");
+        Pattern edgePattern = Pattern.compile("(([0-9]*){1})(\s*)((->){1})(\s*)(([0-9]*){1})(\s*)(.)(\s*)((dist=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*)(.)");
         Matcher edgeMatcher = edgePattern.matcher(line);
         Matcher matcher;
         if(edgeMatcher.matches())
@@ -212,9 +212,9 @@ public class TwoDimGraphDotIO  implements GraphWriter, GraphReader {
     {
         try(Scanner scanner = new Scanner((String) line)) {
             String string = scanner.nextLine();
-            Pattern nodePattern1 = Pattern.compile("(([0-9]*){1})(\s*)\\[((label=n[0-9]*){1})(\s*)((x=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*)((y=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*)\\]");
-            Pattern nodePattern2 = Pattern.compile("([0-9]*)(\s*)\\[((x=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*)((y=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*)((label=n[0-9]*){1})(\s*)\\]");
-            Pattern edgePattern = Pattern.compile("(([0-9]*){1})(\s*)((->){1})(\s*)(([0-9]*){1})(\s*)(\\[)(\s*)((dist=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*)(\\])");
+            Pattern nodePattern1 = Pattern.compile("(([0-9]*){1})(\s*).((label=n[0-9]*){1})(\s*)((x=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*)((y=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*).");
+            Pattern nodePattern2 = Pattern.compile("([0-9]*){1}(\s*).((x=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*)((y=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*)((label=n[0-9]*){1})(\s*).");
+            Pattern edgePattern = Pattern.compile("(([0-9]*){1})(\s*)((->){1})(\s*)(([0-9]*){1})(\s*)(.)(\s*)((dist=((-?)(0|([1-9][0-9]*))(.[0-9]+)?)){1})(\s*)(.)");
             Matcher nodeMatcher1;
             Matcher nodeMatcher2;
             Matcher edgeMatcher;
@@ -296,7 +296,7 @@ public class TwoDimGraphDotIO  implements GraphWriter, GraphReader {
     public HashMap<String, String> parseAnnotation(String line) throws ParseException
     {
         HashMap<String, String> map = new HashMap<>();
-        Pattern p = Pattern.compile("\\[(\s*)([a-zA-Z]*)([0-9]*)=(((-?)(0|([1-9][0-9]*))(.[0-9]+)?){1})(\s*)\\]");
+        Pattern p = Pattern.compile(".(\s*)([a-zA-Z]*)([0-9]*)=(((-?)(0|([1-9][0-9]*))(.[0-9]+)?){1})(\s*).");
         Matcher m = p.matcher(line);
         if(m.matches())
         {
