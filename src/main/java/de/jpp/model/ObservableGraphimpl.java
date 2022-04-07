@@ -169,7 +169,7 @@ public class ObservableGraphimpl<N extends XYNode,A> implements ObservableGraph,
     public void addNodeAddedListener(Consumer listener) {
         listener = (val) -> {
             graph.addNode(val);
-        }
+        };
         nodeAddedListner.add(listener);
     }
 
