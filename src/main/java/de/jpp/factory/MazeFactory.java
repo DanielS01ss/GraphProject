@@ -33,12 +33,12 @@ public class MazeFactory implements Maze {
         Maze m = new Maze() {
             @Override
             public void setHWall(int x, int y, boolean wallActive) {
-
+                maze[x][y] = wallActive;
             }
 
             @Override
             public void setVWall(int x, int y, boolean wallActive) {
-
+                maze[x][y] = wallActive;
             }
 
             @Override
@@ -78,11 +78,11 @@ public class MazeFactory implements Maze {
         //returneaza imagine
         ///si ce e true e alb si ce e negru e false
         //latimea width*2+1 si height*2+1
-        BufferedImage bf = new BufferedImage(maze.getWidth()*2+1,maze.getHeight()*2+1,BufferedImage.TYPE_INT_RGB);
+        BufferedImage bf = new BufferedImage(maze.getWidth()*2+5,maze.getHeight()*2+5,BufferedImage.TYPE_INT_RGB);
 
-        for(int i=0;i<maze.getWidth()*2+1;i++)
+        for(int i=0;i<maze.getWidth()*2+5;i++)
         {
-            for(int j=0;j<maze.getHeight()*2+1;j++)
+            for(int j=0;j<maze.getHeight()*2+5;j++)
             {
                 if(maze.isHWallActive(i,j))
                 {
@@ -113,7 +113,9 @@ public class MazeFactory implements Maze {
         int[] dx = {0, 1, 0, -1};
         int[] dy = {1, 0, -1, 0};
         shuffle(dx, dy);
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < maze.length; i++) {
+            Random random = new Random();
+            random.nextInt();
             if (x + dx[i] * 2 >= 0 && x + dx[i] * 2 < maze.length && y + dy[i] * 2 >= 0
                     && y + dy[i] * 2 < maze[0].length && maze[x + dx[i] * 2][y + dy[i] * 2] == true) {
                 maze[x + dx[i] * 2][y + dy[i] * 2] = false;

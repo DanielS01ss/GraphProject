@@ -2,36 +2,37 @@ package gui;
 
 
 import de.jpp.factory.GraphFactory;
+import de.jpp.model.TwoDimGraph;
 import gui.controlView.AlgorithmControlView;
 import gui.controlView.GraphControlView;
 import gui.graphViews.GraphViews;
 import javafx.application.Application;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import de.jpp.model.TwoDimGraph;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 public class GUI extends Application {
+    private TwoDimGraph graph;
 
-    //private TwoDimGraph graph = new GraphFactory().createNewTwoDimGraph();
 
     public static void main(String[] args) {
-
+        System.setProperty("javafx.preloader", "com.teamgannon.trips.javafxsupport.TripsPreloader");
         launch(args);
     }
 
-    private GraphViews graphView;
+    public GUI()
+    {
+       this.graph = new GraphFactory().createNewTwoDimGraph();
+    }
 
     @Override
-    public void start(Stage primaryStage) {
-
+    public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("JPP Graph Viewer 2022");
         primaryStage.setResizable(false);
 
@@ -43,20 +44,20 @@ public class GUI extends Application {
 
         primaryStage.setScene(new Scene(mainPanel, GraphicConfigs.FRAME_SIZE[0], GraphicConfigs.FRAME_SIZE[1]));
         primaryStage.show();
-
-        //new Thread(() -> graphView.loadGraphIntoView(graph, GraphFactory.getMaze(9, 9, 1, 1))).start();
     }
 
+    private GraphViews graphView;
+
     private Pane getGraphView() {
-        //graphView = new GraphViews(graph, this::handleErrorMsg);
+        graphView = new GraphViews(graph, this::handleErrorMsg);
         return graphView.getNode();
     }
 
     private Pane getAlgorithmControl() {
-        //AlgorithmControlView acv = new AlgorithmControlView(graph, this::handleErrorMsg, graphView);
-        //Pane pane = acv.getNode();
-        //pane.setPrefSize(GraphicConfigs.FRAME_SIZE[0] - GraphicConfigs.GRAPH_PANE_SIZE[0], GraphicConfigs.GRAPH_PANE_SIZE[1]);
-        return null;//pane;
+        AlgorithmControlView acv = new AlgorithmControlView(graph, this::handleErrorMsg, graphView);
+        Pane pane = acv.getNode();
+        pane.setPrefSize(GraphicConfigs.FRAME_SIZE[0] - GraphicConfigs.GRAPH_PANE_SIZE[0], GraphicConfigs.GRAPH_PANE_SIZE[1]);
+        return pane;
     }
 
     private Pane getSouthernBox() {
@@ -65,8 +66,8 @@ public class GUI extends Application {
 
         box.getChildren().add(getErrorField());
 
-       // GraphControlView gv = new GraphControlView(graph, graphView, this::handleErrorMsg);
-        //box.getChildren().add(gv.getNode());
+        GraphControlView gv = new GraphControlView(graph, graphView, this::handleErrorMsg);
+        box.getChildren().add(gv.getNode());
         return box;
     }
 
@@ -91,6 +92,4 @@ public class GUI extends Application {
         getErrorField().appendText(time + ": " + msg + "\n");
         System.out.println("error: " + msg);
     }
-
-
 }

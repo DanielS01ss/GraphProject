@@ -1,12 +1,9 @@
 package de.jpp.io;
 
 import com.example.graphen.ApplicationResources;
-import de.jpp.io.GXLWriterTemplate;
-import de.jpp.io.interfaces.ParseException;
 import de.jpp.model.XYNode;
 import de.jpp.model.interfaces.Edge;
 import de.jpp.model.interfaces.Graph;
-
 import org.jdom2.Attribute;
 import org.jdom2.Element;
 
@@ -84,12 +81,7 @@ public class TwoDimGraphGXLWriter extends GXLWriterTemplate {
                     }
                     index++;
                 }
-                try{
-                    node = new XYNode(label,x,y);
-                } catch (ParseException ex)
-                {
-                    System.out.println(ex);
-                }
+                node = new XYNode(label,x,y);
                 idMap.put(node,String.valueOf(id));
             }
         }
