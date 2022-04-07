@@ -167,6 +167,9 @@ public class ObservableGraphimpl<N extends XYNode,A> implements ObservableGraph,
 
     @Override
     public void addNodeAddedListener(Consumer listener) {
+        listener = (val) -> {
+            graph.addNode(val);
+        }
         nodeAddedListner.add(listener);
     }
 
