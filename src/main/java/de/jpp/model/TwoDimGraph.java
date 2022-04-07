@@ -1,7 +1,6 @@
 package de.jpp.model;
 
 import de.jpp.model.interfaces.Edge;
-import de.jpp.model.interfaces.Graph;
 import de.jpp.model.interfaces.ObservableGraph;
 import de.jpp.model.interfaces.WeightedGraph;
 
@@ -14,7 +13,7 @@ import java.util.function.Consumer;
  * A Two Dimensional graph. <br>
  * The abstract-tag is only set because the tests will not compile otherwise. You should remove it!
  */
-public class TwoDimGraph implements WeightedGraph<XYNode,Double>, ObservableGraph<XYNode,Double> {
+public class TwoDimGraph implements WeightedGraph<XYNode, Double>, ObservableGraph<XYNode, Double> {
     /**
      * Adds an edge to the graph which is automatically initialised with the euclidian distance of the nodes <br>
      * Returns the newly created edge
@@ -36,8 +35,20 @@ public class TwoDimGraph implements WeightedGraph<XYNode,Double>, ObservableGrap
 
     public Edge<XYNode, Double> addEuclidianEdge(XYNode start, XYNode dest) {
         Double weight = start.euclidianDistTo(dest);
-        addEdge(start,dest,Optional.of(weight));
-        return new Edge<>(start,dest,Optional.of(weight));
+        if (graph.getNodes().contains(start) && graph.getNodes().contains(dest)) {
+            graph.addEdge(start, dest, Optional.of(weight));
+        } else if (graph.getNodes().contains(start) && !graph.getNodes().contains(dest)) {
+            graph.addNode(dest);
+            graph.addEdge(start, dest, Optional.of(weight));
+        } else if (!graph.getNodes().contains(start) && graph.getNodes().contains(dest)) {
+            graph.addNode(start);
+            graph.addEdge(start, dest, Optional.of(weight));
+        } else if (!graph.getNodes().contains(start) && !graph.getNodes().contains(dest)) {
+            graph.addNode(start);
+            graph.addNode(dest);
+            graph.addEdge(start, dest, Optional.of(weight));
+        }
+        return new Edge<>(start, dest, Optional.of(weight));
     }
 
     @Override
@@ -55,7 +66,7 @@ public class TwoDimGraph implements WeightedGraph<XYNode,Double>, ObservableGrap
 
     @Override
     public boolean addNode(XYNode node) {
-        return graph.addNode(node);
+        return graph.addNode((XYNode) node);
     }
 
     @Override
@@ -75,8 +86,20 @@ public class TwoDimGraph implements WeightedGraph<XYNode,Double>, ObservableGrap
 
     @Override
     public Edge<XYNode, Double> addEdge(XYNode start, XYNode destination, Optional<Double> annotation) {
-        graph.addEdge(start,destination,annotation);
-        return new Edge<>(start,destination,annotation);
+        if (graph.getNodes().contains(start) && graph.getNodes().contains(destination)) {
+            graph.addEdge(start, destination, annotation);
+        } else if (graph.getNodes().contains(start) && !graph.getNodes().contains(destination)) {
+            graph.addNode(destination);
+            graph.addEdge(start, destination, annotation);
+        } else if (!graph.getNodes().contains(start) && graph.getNodes().contains(destination)) {
+            graph.addNode(start);
+            graph.addEdge(start, destination, annotation);
+        } else if (!graph.getNodes().contains(start) && !graph.getNodes().contains(destination)) {
+            graph.addNode(start);
+            graph.addNode(destination);
+            graph.addEdge(start, destination, annotation);
+        }
+        return new Edge<>(start, destination, annotation);
     }
 
     @Override

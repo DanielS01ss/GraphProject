@@ -1,9 +1,10 @@
 package de.jpp.factory;
 
+import de.jpp.model.GraphImpl;
 import de.jpp.model.LabelMapGraph;
+import de.jpp.model.ObservableGraphimpl;
 import de.jpp.model.TwoDimGraph;
 import de.jpp.model.interfaces.Graph;
-import de.jpp.model.*;
 import de.jpp.model.interfaces.ObservableGraph;
 
 public class GraphFactory {
@@ -41,6 +42,10 @@ public class GraphFactory {
 
     public LabelMapGraph createNewLabelMapGraph() {
         return new LabelMapGraph();
+    }
+
+    public static MazeFactory getMaze() {
+        return new MazeFactory();
     }
 
 }

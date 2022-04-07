@@ -1,7 +1,5 @@
 package de.jpp.model;
 
-import de.jpp.io.interfaces.ParseException;
-
 import java.util.Objects;
 
 public class XYNode {
@@ -31,9 +29,9 @@ public class XYNode {
      * @param y     the y value of the coordinate
      **/
 
-    public XYNode(String label, double x, double y) throws ParseException {
+    public XYNode(String label, double x, double y) {
         if(label == null)
-            throw new ParseException();
+            label = "";
         else
             this.label = label;
         this.x = x;
@@ -84,8 +82,15 @@ public class XYNode {
 
     @Override
     public int hashCode() {
-        return Objects.hash(x, y);
+        return Objects.hash(label,x, y);
     }
 
-
+    @Override
+    public String toString() {
+        return "XYNode{" +
+                "label='" + label + '\'' +
+                ", x=" + x +
+                ", y=" + y +
+                '}';
+    }
 }

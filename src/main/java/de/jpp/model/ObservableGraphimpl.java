@@ -4,9 +4,11 @@ import de.jpp.model.interfaces.Edge;
 import de.jpp.model.interfaces.Graph;
 import de.jpp.model.interfaces.ObservableGraph;
 import de.jpp.model.interfaces.WeightedGraph;
-import org.w3c.dom.Node;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Objects;
+import java.util.Optional;
 import java.util.function.Consumer;
 
 public class ObservableGraphimpl<N extends XYNode,A> implements ObservableGraph, WeightedGraph {
@@ -99,7 +101,7 @@ public class ObservableGraphimpl<N extends XYNode,A> implements ObservableGraph,
 
     @Override
     public boolean addNode(Object node) {
-        return graph.addNode(node);
+        return graph.addNode((N) node);
     }
 
     @Override
@@ -165,16 +167,11 @@ public class ObservableGraphimpl<N extends XYNode,A> implements ObservableGraph,
 
     @Override
     public void addNodeAddedListener(Consumer listener) {
-        XYNode node = new XYNode();
-        listener = (val) -> {graph.addNode(val);};
-        listener.accept(node);
         nodeAddedListner.add(listener);
     }
 
     @Override
     public void addNodeRemovedListener(Consumer listener) {
-        listener = (val) -> {graph.removeNode(val);};
-        listener.accept(new XYNode());
         nodeRemovedListner.add(listener);
     }
 

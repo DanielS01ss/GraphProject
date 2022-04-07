@@ -4,7 +4,6 @@ import de.jpp.model.interfaces.Edge;
 import de.jpp.model.interfaces.Graph;
 import org.w3c.dom.Node;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class GraphImpl<N, A> implements Graph<N,A> {
@@ -59,17 +58,26 @@ public class GraphImpl<N, A> implements Graph<N,A> {
         {
             edges.put((N) s, new ArrayList<>());
         }
-        return nodes.addAll(nodes);
+        ArrayList<N> list = new ArrayList<>(new HashSet<>(nodes));
+        for(int i = 0; i < list.size(); i++)
+        {
+            this.nodes.add(list.get(i));
+        }
+        return nodes.size() != 0;
     }
 
     @Override
     public boolean addNodes(Object[] nodes) {
-        ArrayList<N> node = new ArrayList<>(Arrays.asList((N)nodes));
+        ArrayList<N> node = new ArrayList<>(new HashSet<>(Arrays.asList((N[]) nodes)));
         for(Object s : node)
         {
             edges.put((N) s, new ArrayList<>());
         }
-        return this.nodes.addAll(node);
+        for(int i = 0; i < node.size(); i++)
+        {
+            this.nodes.add(node.get(i));
+        }
+        return true;
     }
 
     @Override
@@ -174,5 +182,18 @@ public class GraphImpl<N, A> implements Graph<N,A> {
     public void clear() {
         this.nodes.clear();
         this.edges.clear();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        GraphImpl<?, ?> graph = (GraphImpl<?, ?>) o;
+        return nodes.equals(graph.nodes) && edges.equals(graph.edges);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nodes, edges);
     }
 }
